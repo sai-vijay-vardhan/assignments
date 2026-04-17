@@ -1,0 +1,19 @@
+body {
+    background-color: pink;
+}
+.profile-img{
+    position: absolute;
+    height: 150px;
+    width: 120px;
+    right: 20px;
+    top: 20px;
+}
+.title{
+    text-align: center;
+}
+h2{
+    color: brown;
+}
+p{
+    color: blue;
+}
