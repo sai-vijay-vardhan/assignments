@@ -1,51 +1,35 @@
-def calculate_ticket_price(seats, timing, is_weekend):
-    prices = {
-        "VIP": 500,
-        "REGULAR": 300,
-        "ECONOMY": 150
-    }
+t = (10, 20, 30, 40, 50, 20, 60)
 
-    timing_multiplier = {
-        "morning": 0.8,
-        "afternoon": 1,
-        "evening": 1.2,
-        "night": 1.5
-    }
+# 1
+print(t.count(20))
 
-    valid_seats = [s for s in seats if s in prices]
+# 2
+print(t.index(40))
 
-    if not valid_seats:
-        return "No valid booking"
+# 3
+lst = list(t)
+lst.append(70)
+t = tuple(lst)
 
-    # Base total
-    base_total = sum(prices[s] for s in valid_seats)
+# 4
+print(t[2:6])
 
-    # Timing adjustment
-    timing_total = base_total * timing_multiplier[timing]
+# 5
+t = t + (80, 90)
 
-    # Weekend
-    if is_weekend:
-        timing_total *= 1.10
+# 6
+print(t * 2)
 
-    # Discount
-    discount = 0
-    if len(valid_seats) >= 5:
-        discount = timing_total * 0.15
-        timing_total -= discount
+# 7
+print(50 in t)
 
-    # Booking fee
-    booking_fee = 50 * len(valid_seats)
-    total_with_fee = timing_total + booking_fee
+# 8
+a, b, c, d, e, f, g, *rest = t
+print(a, b, rest)
 
-    # GST
-    tax = total_with_fee * 0.12
+# 9 (Error)
+# t[0] = 100 ❌ TypeError (Immutable)
 
-    final_amount = round(total_with_fee + tax)
-
-    return {
-        "base_total": base_total,
-        "timing_adjustment": round(timing_total),
-        "discount": round(discount),
-        "tax": round(tax),
-        "final_amount": final_amount
-    }
+# 10
+nested = (1, 2, (3, 4))
+print(nested[2][1])  # 4
