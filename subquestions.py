@@ -28,7 +28,7 @@ a, b, c, d, e, f, g, *rest = t
 print(a, b, rest)
 
 # 9 (Error)
-# t[0] = 100 ❌ TypeError (Immutable)
+# t[0] = 100 TypeError (Immutable)
 
 # 10
 nested = (1, 2, (3, 4))
