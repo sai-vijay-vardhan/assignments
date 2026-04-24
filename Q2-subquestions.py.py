@@ -1,30 +1,35 @@
-data = [10, 20, 30, 40, 50, 20, 30, 60, 70, 80, 90]
+t = (10, 20, 30, 40, 50, 20, 60)
 
-# 1. append()
-data.append([100, 110])
+# 1
+print(t.count(20))
 
-# 2. extend()
-data.extend([120, 130])
+# 2
+print(t.index(40))
 
-# 3. insert()
-data.insert(2, 25)
+# 3
+lst = list(t)
+lst.append(70)
+t = tuple(lst)
 
-# 4. remove()
-data.remove(20)
+# 4
+print(t[2:6])
 
-# 5. pop()
-last_element = data.pop()
+# 5
+t = t + (80, 90)
 
-# 6. count()
-count_30 = data.count(30)
+# 6
+print(t * 2)
 
-# 7. index()
-index_40 = data.index(40)
+# 7
+print(50 in t)
 
-# 8. reverse()
-data.reverse()
+# 8
+a, b, c, d, e, f, g, *rest = t
+print(a, b, rest)
 
-print("List after operations:", data)
-print("Popped:", last_element)
-print("Count of 30:", count_30)
-print("Index of 40:", index_40)
+# 9 (Error)
+# t[0] = 100  TypeError (Immutable)
+
+# 10
+nested = (1, 2, (3, 4))
+print(nested[2][1])  # 4
